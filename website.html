@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! 🎂</title>
+    <!-- Google Fonts for an elegant, festive feel -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* Mobile-Friendly Main Container */
+        .card-container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+            animation: fadeIn 1.2s ease-in-out;
+            position: relative;
+        }
+
+        /* Interactive Floating Cake Graphic */
+        .cake-emoji {
+            font-size: 70px;
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.2rem;
+            color: #ff6b81;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .name {
+            font-size: 2.2rem;
+            color: #4a4a4a;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+        }
+
+        .message {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Call to Action Celebration Button */
+        .celebrate-btn {
+            background: linear-gradient(45deg, #ff6b81, #ff4757);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            outline: none;
+            width: 100%; /* Full width on smaller screens */
+            max-width: 250px;
+        }
+
+        .celebrate-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Responsive adjustments for tiny screens */
+        @media (max-width: 375px) {
+            h1 { font-size: 2.6rem; }
+            .name { font-size: 1.8rem; }
+            .card-container { padding: 30px 20px; }
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <div class="cake-emoji">🎂</div>
+        <h1>Happy Birthday</h1>
+        <!-- Customize the name below -->
+        <div class="name">Alex!</div> 
+        
+        <!-- Customize your personal message below -->
+        <p class="message">
+            Wishing you a wonderful day filled with love, laughter, and endless joy. May this upcoming year bring you closer to all your dreams! 🌟
+        </p>
+
+        <button class="celebrate-btn" onclick="triggerConfetti()">🎉 Celebrate!</button>
+    </div>
+
+    <!-- External Canvas Confetti Script Library -->
+    <script src="https://jsdelivr.net"></script>
+    
+    <script>
+        // Auto-fire confetti once the page initially loads
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(triggerConfetti, 500);
+        });
+
+        // Interactive confetti blast function
+        function triggerConfetti() {
+            // Left side burst
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { x: 0.2, y: 0.6 }
+            });
+            // Right side burst
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { x: 0.8, y: 0.6 }
+            });
+        }
+    </script>
+</body>
+</html>
